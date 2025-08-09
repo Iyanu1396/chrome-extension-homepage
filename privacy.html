@@ -149,6 +149,14 @@
             margin: 1rem 0;
         }
 
+        .security-highlight {
+            background: #e8f5e8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+            margin: 1rem 0;
+        }
+
         .dont-list {
             background: #ffebee;
             padding: 1rem;
@@ -243,7 +251,7 @@
 
         <div class="privacy-content">
             <h1>Privacy Policy</h1>
-            <p class="effective-date">Effective Date: July 12, 2025</p>
+            <p class="effective-date">Effective Date: August 9, 2025</p>
 
             <div class="intro">
                 <p><strong>Inbox IQ</strong> is a Chrome Extension that uses AI to help users extract action items from their Gmail messages. Your privacy is important to us, and this policy explains how we handle your data.</p>
@@ -280,28 +288,91 @@
             </div>
 
             <div class="section">
-                <h2><span class="section-icon">🔹</span> Third-Party Services</h2>
-                <p>Inbox IQ uses the following third-party services:</p>
-                <div class="subsection">
-                    <h3>Google APIs:</h3>
-                    <p>To authenticate users and access Gmail (with your explicit permission)</p>
-                </div>
-                <div class="subsection">
-                    <h3>OpenAI API:</h3>
-                    <p>To extract action items from email content using AI</p>
-                </div>
+                <h2><span class="section-icon">🔒</span> Data Protection Mechanisms</h2>
+                <p>We implement comprehensive security measures to protect your sensitive email data:</p>
                 
-                <div class="highlight">
-                    <p><strong>Note:</strong> These services process your data only as needed to fulfill your request.</p>
+                <div class="security-highlight">
+                    <div class="subsection">
+                        <h3>🛡️ Encryption in Transit:</h3>
+                        <ul>
+                            <li>All data transmitted to and from third-party APIs (Google, OpenAI) is encrypted using TLS/HTTPS protocols</li>
+                            <li>Your email content is encrypted during transmission to OpenAI's API for processing</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>⏱️ Temporary Processing Only:</h3>
+                        <ul>
+                            <li>Email content is processed in real-time and immediately discarded</li>
+                            <li>No email data is stored in persistent storage or databases</li>
+                            <li>Processing occurs only when you explicitly request action item extraction</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🔐 Secure Authentication:</h3>
+                        <ul>
+                            <li>OAuth 2.0 protocol for secure Google account authentication</li>
+                            <li>Access tokens are stored securely in Chrome's encrypted storage API</li>
+                            <li>Minimum necessary permissions requested (read-only email access)</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🏠 Local Processing:</h3>
+                        <ul>
+                            <li>Email analysis occurs locally in your browser when possible</li>
+                            <li>Only necessary content is sent to OpenAI for AI processing</li>
+                            <li>No data persistence on external servers</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🚫 Data Minimization:</h3>
+                        <ul>
+                            <li>Only email content necessary for action item extraction is processed</li>
+                            <li>Metadata, attachments, and other sensitive information are not accessed</li>
+                            <li>Immediate deletion of processed data after analysis</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2><span class="section-icon">🔹</span> Data Storage & Security</h2>
+                <h2><span class="section-icon">🔹</span> Third-Party Services</h2>
+                <p>Inbox IQ uses the following third-party services with appropriate data protection:</p>
+                <div class="subsection">
+                    <h3>Google APIs:</h3>
+                    <p>To authenticate users and access Gmail (with your explicit permission). All communications are encrypted and follow Google's security standards.</p>
+                </div>
+                <div class="subsection">
+                    <h3>OpenAI API:</h3>
+                    <p>To extract action items from email content using AI. Data is encrypted in transit and OpenAI does not retain your data for training purposes when using their API.</p>
+                </div>
+                
+                <div class="highlight">
+                    <p><strong>Note:</strong> These services process your data only as needed to fulfill your request and are bound by their respective privacy policies and data protection standards.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon">🔹</span> Data Retention and Deletion</h2>
                 <ul>
-                    <li><strong>Inbox IQ does not store or save your emails or personal information on any server.</strong></li>
-                    <li>All data stays within the browser unless explicitly sent to OpenAI for processing.</li>
-                    <li>Your authentication tokens and preferences are stored securely in your browser using Chrome's storage API.</li>
+                    <li><strong>Email Content:</strong> Processed temporarily and immediately deleted after action item extraction</li>
+                    <li><strong>Authentication Data:</strong> Stored locally in your browser until you sign out or uninstall the extension</li>
+                    <li><strong>User Preferences:</strong> Stored locally and deleted when you uninstall the extension</li>
+                    <li><strong>No Long-term Storage:</strong> We do not maintain databases or servers that store your personal information</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon">🔹</span> Your Rights and Controls</h2>
+                <p>You maintain full control over your data:</p>
+                <ul>
+                    <li><strong>Access Control:</strong> You can revoke Gmail access permissions at any time through Google Account settings</li>
+                    <li><strong>Data Deletion:</strong> Uninstalling the extension removes all locally stored data</li>
+                    <li><strong>Processing Control:</strong> Action item extraction only occurs when you explicitly request it</li>
+                    <li><strong>Transparency:</strong> You can see exactly what permissions the extension requests and uses</li>
                 </ul>
             </div>
 
@@ -309,21 +380,45 @@
                 <h2><span class="section-icon">🔹</span> What We Don't Do</h2>
                 <div class="dont-list">
                     <ul>
-                        <li>❌ We do not sell or share your data with third parties.</li>
-                        <li>❌ We do not track your browsing activity.</li>
-                        <li>❌ We do not store email data permanently.</li>
+                        <li>❌ We do not sell or share your data with third parties</li>
+                        <li>❌ We do not track your browsing activity</li>
+                        <li>❌ We do not store email data permanently</li>
+                        <li>❌ We do not access emails without your explicit action</li>
+                        <li>❌ We do not use your data for advertising or marketing</li>
                     </ul>
                 </div>
             </div>
 
             <div class="section">
+                <h2><span class="section-icon">🔹</span> Compliance and Standards</h2>
+                <p>Inbox IQ adheres to:</p>
+                <ul>
+                    <li>Google API Services User Data Policy</li>
+                    <li>Chrome Web Store Developer Program Policies</li>
+                    <li>General Data Protection Regulation (GDPR) principles</li>
+                    <li>California Consumer Privacy Act (CCPA) requirements</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-icon">🔹</span> Security Incident Response</h2>
+                <p>In the unlikely event of a security incident:</p>
+                <ul>
+                    <li>We will immediately investigate and contain any potential breach</li>
+                    <li>Users will be notified promptly if their data may have been affected</li>
+                    <li>We will cooperate with relevant authorities as required by law</li>
+                    <li>Steps will be taken to prevent future occurrences</li>
+                </ul>
+            </div>
+
+            <div class="section">
                 <h2><span class="section-icon">🔹</span> Your Consent</h2>
-                <p>By using Inbox IQ, you consent to the use of your information as described in this policy.</p>
+                <p>By using Inbox IQ, you consent to the collection, processing, and protection of your information as described in this policy. You may withdraw consent at any time by discontinuing use of the extension and revoking permissions through your Google Account settings.</p>
             </div>
 
             <div class="contact-info">
                 <h2><span class="section-icon">🔹</span> Contact Us</h2>
-                <p>If you have any questions or concerns about this policy, feel free to contact us at:</p>
+                <p>If you have any questions or concerns about this policy or our data protection practices, feel free to contact us at:</p>
                 <p>📧 Email: <a href="mailto:isquareinboxiq@gmail.com">isquareinboxiq@gmail.com</a></p>
             </div>
         </div>
